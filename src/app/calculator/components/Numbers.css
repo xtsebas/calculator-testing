@@ -1,0 +1,23 @@
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    width: 80%;
+    height: 60%;
+}
+
+.numbers option {
+    font-size: 100%;
+    color: black;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers option:hover {
+    background-color: rgb(66, 66, 66);
+}
