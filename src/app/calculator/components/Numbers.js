@@ -1,9 +1,15 @@
 import './Numbers.css';
 
-const Numbers = props => {
+const Numbers = (props) => {
     const handleNumberClick = (number) => {
         if (number === 'CE') {
-            return props.setOutput('');
+            props.setFirst(null);
+            props.setSecond(null);
+            props.setOption('');
+            props.setOutput('');
+            props.setTotal('');
+            props.setOperationHistory('');
+            return;
         }
 
         if (props.output.length < 9) {
@@ -13,18 +19,18 @@ const Numbers = props => {
 
     return (
         <section className="numbers">
-            <option className="numbers__number" onClick={() => handleNumberClick(7)}>7</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(8)}>8</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(9)}>9</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(4)}>4</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(5)}>5</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(6)}>6</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(1)}>1</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(2)}>2</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(3)}>3</option>
-            <option className="numbers__number" onClick={() => handleNumberClick('CE')}>CE</option>
-            <option className="numbers__number" onClick={() => handleNumberClick(0)}>0</option>
-            <option className="numbers__number" onClick={() => handleNumberClick('.')}>.</option>
+            <button className="numbers__number" onClick={() => handleNumberClick('7')}>7</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('8')}>8</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('9')}>9</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('4')}>4</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('5')}>5</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('6')}>6</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('1')}>1</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('2')}>2</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('3')}>3</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('CE')}>CE</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('0')}>0</button>
+            <button className="numbers__number" onClick={() => handleNumberClick('.')}>.</button>
         </section>
     );
 };

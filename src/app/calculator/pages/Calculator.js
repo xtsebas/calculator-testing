@@ -7,12 +7,12 @@ import './Calculator.css';
 
 const Calculator = props => {
     const [output, setOutput] = useState("");
+    const [total, setTotal] = useState("");
 
     return (
         <div className="Calculator">
-            <Screen value={output} />
-            <Options setOutput={setOutput} output={output} />
-            <Numbers setOutput={setOutput} output={output} />
+            <Screen value={output} total={total} />
+            <Options setOutput={setOutput} output={output} setTotal={setTotal} total={total} />
         </div>
     );
 };  

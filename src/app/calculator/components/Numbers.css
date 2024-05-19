@@ -9,7 +9,7 @@
     height: 60%;
 }
 
-.numbers option {
+.numbers button {
     font-size: 100%;
     color: black;
     border: 1px solid black;
@@ -18,6 +18,6 @@
     align-items: center;
 }
 
-.numbers option:hover {
+.numbers button:hover {
     background-color: rgb(66, 66, 66);
 }
