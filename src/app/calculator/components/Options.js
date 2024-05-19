@@ -11,6 +11,7 @@ const Options = (props) => {
     const [operationHistory, setOperationHistory] = useState('');
 
     useEffect(() => {
+        //debugger;
         let result;
         if (first !== null && Option === '+/-') {
             result = toggleSign(first);
@@ -48,24 +49,31 @@ const Options = (props) => {
     }, [first, second, Option, props]);
 
     const handleOptionClick = (option) => {
+        debugger;
         if (Option === '' && option !== '=') {
             setOption(option);
             if (props.output !== '') {
                 const currentValue = Number(props.output);
                 setFirst(currentValue);
-                setOperationHistory(operationHistory + currentValue + option);
-                console.log('aqui hace eso 2');
-                props.setTotal(operationHistory + currentValue + option);
+                setOperationHistory(operationHistory + option + currentValue);
+                if (props.total === '') {
+                    props.setTotal(currentValue);
+                } else {
+                    props.setTotal(operationHistory + option + currentValue);
+                }
                 props.setOutput('');
             }
         } else if (first !== null && props.output !== '' && option === '=') {
+            //debugger;
             const currentValue = Number(props.output);
             setSecond(currentValue);
             setOption(Option);
-            setOperationHistory(operationHistory + currentValue);
-            console.log('First:', first, 'Second:', second, 'Option:', Option, 'Output:', props.output);
-            console.log('aqui hace eso 3');
-            props.setTotal(operationHistory + currentValue);
+            if (props.total === '') {
+                props.setTotal(first);
+            } else {
+                props.setTotal(props.total + Option + currentValue);
+            }
+            setOperationHistory(operationHistory + Option + currentValue);
         }
     };
 
