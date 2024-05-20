@@ -49,7 +49,7 @@ const Options = (props) => {
     }, [first, second, Option, props]);
 
     const handleOptionClick = (option) => {
-        debugger;
+        //debugger;
         if (Option === '' && option !== '=') {
             setOption(option);
             if (props.output !== '') {

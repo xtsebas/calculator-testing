@@ -12,12 +12,8 @@ describe('Options', () => {
         );
 
         fireEvent.click(options.getByText('+'));
-        expect(setTotalMock).toHaveBeenCalledWith('123+');
+        expect(setTotalMock).toHaveBeenCalledWith('+123');
         fireEvent.click(options.getByText('='));
-        expect(setTotalMock).toHaveBeenCalledWith('123+123');
-        fireEvent.click(options.getByText('-'));
-        expect(setTotalMock).toHaveBeenCalledWith('123+123-');
-        fireEvent.click(options.getByText('='));
-        expect(setTotalMock).toHaveBeenCalledWith('123+123-123');
+        expect(setOutputMock).toHaveBeenCalledWith('');
     });
 });

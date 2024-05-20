@@ -1,14 +1,18 @@
 function sum(first, second){
     const result = first + second;
     if (result.toString().length > 9) {
-        return result.toFixed(9);
+        return 'ERROR';
+    } else if (result < 0){
+        return 'ERROR';
     }
     return result;
 };
 function sub(first, second){
     const result = first - second;
     if (result.toString().length > 9) {
-        return result.toFixed(9);
+        return 'ERROR';
+    } else if (result < 0){
+        return 'ERROR';
     }
     return result;
 };  
@@ -16,7 +20,9 @@ function sub(first, second){
 function mul(first, second){    
     const result = first * second;
     if (result.toString().length > 9) {
-        return result.toFixed(9);
+        return 'ERROR';
+    } else if (result < 0){
+        return 'ERROR';
     }
     return result;
 };
@@ -24,7 +30,9 @@ function mul(first, second){
 function div(first, second){    
     const result = first / second;
     if (result.toString().length > 9) {
-        return result.toFixed(9);
+        return result.toFixed(7);
+    } else if (result < 0){
+        return 'ERROR';
     }
     return result;
 };
@@ -32,7 +40,9 @@ function div(first, second){
 function toggleSign(number) {
     const result = -number;
     if (result.toString().length > 9) {
-        return result.toFixed(9);
+        return 'ERROR';
+    } else if (result < 0){
+        return 'ERROR';
     }
     return result;
 };
